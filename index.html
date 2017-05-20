@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SEVERUSY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="气吞万里如虎">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SEVERUSY">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="SEVERUSY">
+<meta property="og:description" content="气吞万里如虎">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SEVERUSY">
+<meta name="twitter:description" content="气吞万里如虎">
+  
+    <link rel="alternate" href="/atom.xml" title="SEVERUSY" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SEVERUSY</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hexo-error" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/hexo-error/" class="article-date">
+  <time datetime="2017-05-20T09:26:10.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/hexo-error/">HEXO相关错误</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo搭建博客"><a href="#hexo搭建博客" class="headerlink" title="hexo搭建博客"></a>hexo搭建博客</h2><p>这个网上一搜就有，我用的是<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">windows</a>，我就不赘述了。<br>单说一下在搭建博客时出现的坑：</p>
+<p>1、误用linux的安装方式来安装，返回错误</p>
+<pre><code>bush：sudo command not found
+</code></pre><p>还以为环境变量出了问题一直在修改path</p>
+<p>经<a href="https://iamsail.github.io/" target="_blank" rel="external">长航大佬</a> 指点换了另外的安装姿势</p>
+<p>详见<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">代码咖啡</a>.这才顺利安装完毕 $</p>
+<p>2、用淘宝NPM镜像安装node.js package management[可能]</p>
+<p><a href="http://npm.taobao.org/" target="_blank" rel="external">链接</a></p>
+<p>安装方法就是先安装cnpm</p>
+<pre><code>$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><p>然后安装你要安装的那一块内容</p>
+<pre><code>$ cnpm install hexo-renderer-sass --save               
+               [     要安装的那个模块    ]
+</code></pre><p>剩下的部分还没有试，但要安装的已经安装完毕</p>
+<p>3、部署到github上时出现错误</p>
+<p>在执行 hexo deploy 后</p>
+<p>出现 error deployer not found:git 的错误</p>
+<p>经查询，hexo更新到3.0后deploy的type应改成git</p>
+<p>我的hexo已经是3.0以上版本，type也已是git，仍失败</p>
+<p>根据返回错误分析，应该是git这种deploy方法没有找到</p>
+<p>于是使用</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>之后解决，解决方法来源于<a href="">Melodic</a></p>
+<p>4、在hexo中插入图片</p>
+<p>使用了插件 <strong>asset-image</strong></p>
+<p>利用了hexo的创建资源文件夹</p>
+<p>详见<a href="http://www.tuicool.com/articles/umEBVfI" target="_blank" rel="external">在hexo中无痛插入图片</a></p>
+<p>不过后来我改成用图床上传图片然后用链接来上传图片了</p>
+<p>最后膜拜一个非常厉害的大佬<a href="https://github.com/iTimeTraveler" target="_blank" rel="external">iIimeTraveler</a><br>和一篇文章<a href="http://wp.huangshiyang.com/hexo%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88" target="_blank" rel="external">Hexo常见问题解决方案</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/20/hexo-error/" data-id="cj2x95o8f000kvwv209zdwwj2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-dict-set" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/dict-set/" class="article-date">
+  <time datetime="2017-05-20T09:10:54.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/dict-set/">dict与数据设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="dict和set"><a href="#dict和set" class="headerlink" title="dict和set"></a>dict和set</h3><p>python内置了字典</p>
+<p>根据同学的名字查找成绩-利用list</p>
+<pre><code>names = [&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;]
+scores = [95,75,85]
+</code></pre><p>-利用dict</p>
+<pre><code>&gt;&gt;&gt; d = {&apos;Michael&apos;:95,&apos;Bob&apos;:75,&apos;Tracy&apos;:85}
+&gt;&gt;&gt; d[&apos;Michael&apos;]
+95
+</code></pre><p><strong>注意：利用dict时使用的是{ }而非[ ]</strong></p>
+<p>-利用dict-通过key给出数据</p>
+<pre><code>&gt;&gt;&gt; d[&apos;Adam&apos;] = 67
+&gt;&gt;&gt; d[&apos;Adam&apos;]
+67
+</code></pre><p>1个key对应1个value值，多次对1个key放入value，后面的值有效</p>
+<p>key不存在，dict会报错，为避免key不存在的错误，有两种方法：</p>
+<p>1、通过in</p>
+<pre><code>&gt;&gt;&gt; &apos;Thomas&apos; in d
+False
+</code></pre><p>2、通过dict提供的get方法</p>
+<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;)
+&gt;&gt;&gt; 
+</code></pre><p>   返回none，python的交互式命令行不显示结果</p>
+<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;,-1)
+&gt;&gt;&gt; -1
+</code></pre><p>   自己设置如果找不到Thomas的返回值为-1，如果找不到，就返回-1</p>
+<pre><code>&gt;&gt;&gt; d.get(&apos;Michael&apos;,-1)
+&gt;&gt;&gt; 95
+</code></pre><p>   找得到就返回对应的value</p>
+<h4 id="dict内部存放顺序与key的放入顺序无关"><a href="#dict内部存放顺序与key的放入顺序无关" class="headerlink" title="dict内部存放顺序与key的放入顺序无关"></a>dict内部存放顺序与key的放入顺序无关</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/20/dict-set/" data-id="cj2x95o7v000avwv2fpr31qkp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/hello-world/" class="article-date">
+  <time datetime="2017-05-20T07:34:47.717Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/20/hello-world/" data-id="cj2x95o8b000hvwv2ltzgnyfd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-zhibanjilu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/zhibanjilu/" class="article-date">
+  <time datetime="2017-05-20T06:09:16.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/翔工作室/">翔工作室</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/zhibanjilu/">值班记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="开发注意事项"><a href="#开发注意事项" class="headerlink" title="开发注意事项"></a>开发注意事项</h2><h3 id="管理员模块"><a href="#管理员模块" class="headerlink" title="管理员模块"></a>管理员模块</h3><p>1.注意添加管理员模式</p>
+<p>否则后期修改时都到数据库中不成样子</p>
+<p>2.可以弱密码测试，但不可以弱密码交付，后面的人基本不会更改</p>
+<p>3.密码不可以明文存储</p>
+<h3 id="文档撰写"><a href="#文档撰写" class="headerlink" title="文档撰写"></a>文档撰写</h3><p>开发文档要写好</p>
+<p>包括数据库每个字段的用处</p>
+<p>以及如果有接入API，参数等都要写好</p>
+<p>这样才能给后面的人提供方便</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/20/zhibanjilu/" data-id="cj2x95o9g000vvwv2fs6y195z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/会议记录/">会议记录</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cmdwords" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/20/cmdwords/" class="article-date">
+  <time datetime="2017-05-19T16:00:00.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/cmdwords/">cmd命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="命令行转移盘符"><a href="#命令行转移盘符" class="headerlink" title="命令行转移盘符"></a>命令行转移盘符</h3><p>1、直接在cmd打开后输入要进入的盘符<br>比如说要进入d盘<br>就直接输入d：<br>回车就可以进入</p>
+<pre><code>C:\Users\ROOT&gt;d:
+D:\&gt;
+</code></pre><p>2、如果要打开具体文件夹可以先用dir查询现在所在目录下的内容<br>然后再用cd进一步操作进入文件夹</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/20/cmdwords/" data-id="cj2x95o7l0006vwv2szujggje" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dos/">dos</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/18/function/" class="article-date">
+  <time datetime="2017-05-18T14:44:25.000Z" itemprop="datePublished">2017-05-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/18/function/">函数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h2><h3 id="python内置函数"><a href="#python内置函数" class="headerlink" title="python内置函数"></a>python内置函数</h3><p><a href="https://docs.python.org/3/library/functions.html" target="_blank" rel="external">官方文档中的函数</a></p>
+<h3 id="调用函数-1"><a href="#调用函数-1" class="headerlink" title="调用函数"></a>调用函数</h3><p>可以直接用python内置函数把一种数据类型变成另一种数据类型</p>
+<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/18/function/" data-id="cj2x95o80000cvwv21e2t75qk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-circle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/14/circle/" class="article-date">
+  <time datetime="2017-05-14T11:49:41.000Z" itemprop="datePublished">2017-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/14/circle/">循环</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><p>python有两种循环</p>
+<h4 id="for-x-in…循环"><a href="#for-x-in…循环" class="headerlink" title="for x in…循环"></a>for x in…循环</h4><p>  这个循环是依次把list或者tuple中的每个元素迭代出来</p>
+<p>  也就是把每个元素代入变量x， 然后用x执行缩进块的语句</p>
+<pre><code>sum = 0
+for x in [1,2,3,4,5,6,7,8,9,10]:
+      sum = sum + x
+print(sum)
+</code></pre><p>   上面这段代码的输出：</p>
+<pre><code>1
+3
+6
+10
+15
+21
+28
+36
+45
+55
+</code></pre><p>range()函数，给定范围，从0开始，range(5)相当于[0,5)</p>
+<p>以下，用range()生成一个整数序列，然后通过list()函数转化为list</p>
+<pre><code>&gt;&gt;&gt; list(range(5))
+[0, 1, 2, 3, 4]
+</code></pre><h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h4><p>只要条件满足，就不断循环</p>
+<pre><code>sum = 0
+n = 99
+while n &gt; 0:
+    sum = sum + n
+    n = n - 2
+print(sum)
+</code></pre><h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>请利用循环依次对list中的每个名字打印出Hello, xxx!</p>
+<pre><code>L = [&apos;Bart&apos;, &apos;Lisa&apos;, &apos;Adam&apos;]
+for x in L:
+    print(&apos;Hello, %s !&apos; % x)
+</code></pre><p>输出结果： </p>
+<pre><code>Hello, Bart !
+Hello, Lisa !
+Hello, Adam !
+</code></pre><h4 id="break"><a href="#break" class="headerlink" title="break"></a>break</h4><pre><code>n = 1
+while n&lt;= 100:
+    if n &gt; 10:
+        break
+    print(n)
+    n = n + 1
+print(&apos;END&apos;)
+</code></pre><p>   break 用于提前结束循环</p>
+<h4 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h4><p>跳过当前循环，开始下一次循环</p>
+<h6 id="continue-打印奇数"><a href="#continue-打印奇数" class="headerlink" title="continue 打印奇数"></a>continue 打印奇数</h6><pre><code>n = 0
+while n &lt; 10:
+    n = n+1
+    if n % 2 == 0:
+        continue
+    print(n)
+</code></pre><h5 id="break和continue要与if配合使用"><a href="#break和continue要与if配合使用" class="headerlink" title="break和continue要与if配合使用"></a>break和continue要与if配合使用</h5>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/14/circle/" data-id="cj2x95o7c0004vwv2u0ec4bfh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-if-else" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/14/if-else/" class="article-date">
+  <time datetime="2017-05-14T10:01:02.000Z" itemprop="datePublished">2017-05-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/14/if-else/">条件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>1、格式：（<strong><em>注意冒号</em></strong> <strong>：</strong>）</p>
+<pre><code>if &lt;条件判断1&gt;：
+&lt;执行1&gt;
+elif &lt;条件判断2&gt;：
+&lt;执行2&gt;
+else：
+&lt;执行3&gt;
+</code></pre><p>2、if语句执行从上往下判断，如果在某个判断上是True，把该判断对应的语句执行后，就忽略掉剩下的elif和else</p>
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>用input()读取用户输入</p>
+<pre><code>D:\code\py&gt;python if.py
+birth:1997
+</code></pre><p>返回 报错</p>
+<pre><code>Traceback (most recent call last):
+File &quot;if.py&quot;, line 19, in &lt;module&gt;
+if birth &lt; 2000
+TypeError: &apos;&lt;&apos; not supported between instances of &apos;str&apos; and &apos;int&apos;
+</code></pre><p>原因：<br>   input()返回的数据类型是 str ，str不能直接跟整数比较，必须先把 str 转换成整数</p>
+<p>   int()可以吧str转换成整数，就可以用输入的1997和2000进行比较了</p>
+<p>   如果输入abc，则int()函数会因为发现输入的是字符串不是数字而报错，程序退出</p>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p>小明身高1.75，体重80.5kg。请根据BMI公式（体重除以身高的平方）帮小明计算他的BMI指数，并根据BMI指数：</p>
+<p>低于18.5：过轻<br>18.5-25：正常<br>25-28：过重<br>28-32：肥胖<br>高于32：严重肥胖<br>用if-elif判断并打印结果：</p>
+<pre><code># -*- coding: utf-8 -*-
+height = 1.75
+weight = 80.5
+bmi = weight/(height*height)
+if bmi &lt; 0:
+    pass
+elif bmi &lt; 18.5:
+    print(&apos;过轻&apos;)
+elif bmi &gt;= 18.5 and bmi &lt; 25:
+    print(&apos;正常&apos;)
+elif bmi &gt;= 25 and bmi &lt; 28:
+    print(&apos;过重&apos;)
+elif bmi &gt;= 28 and bmi &lt; 32:
+    print(&apos;肥胖&apos;)
+elif bmi &gt;=32 :
+    print(&apos;严重肥胖&apos;)
+</code></pre><p>这段代码我直接粘贴后 运行 返回了如下错误：</p>
+<pre><code>File &quot;if.py&quot;, line 26
+height = 1.75
+^
+IndentationError: unexpected indent
+</code></pre><p>百度后得到</p>
+<blockquote>
+<p>python是一种对缩进非常敏感的语言，最常见的情况是tab和空格的混用会导致错误，或者缩进不对，而这是用肉眼无法分别的。</p>
+</blockquote>
+<p>经重新敲了一遍所有的空格后，终于成功了==<br>以后要注意这样的问题。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/14/if-else/" data-id="cj2x95o8i000ovwv27cihqr37" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-list-tuple" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/13/list-tuple/" class="article-date">
+  <time datetime="2017-05-13T12:57:05.000Z" itemprop="datePublished">2017-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/13/list-tuple/">list和tuple数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a>使用list和tuple</h2><h3 id="list（一种数据类型-有序）"><a href="#list（一种数据类型-有序）" class="headerlink" title="list（一种数据类型,有序）"></a>list（一种数据类型,有序）</h3><pre><code>&gt;&gt;&gt; classmates = [&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;]
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;]
+</code></pre><p>1、向list中追加元素到末尾</p>
+<pre><code>&gt;&gt;&gt; classmates.append(&apos;Adam&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;,&apos;Adam&apos;]
+</code></pre><p>2、把元素插入指定位置，比如索引号为1的位置：</p>
+<pre><code>&gt;&gt;&gt; classmates.insert(1,&apos;Jack&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;,&apos;Jack&apos;,&apos;Bob&apos;,&apos;Tracy&apos;,&apos;Adam&apos;]
+</code></pre><p>3、删除list末尾的元素</p>
+<pre><code>&gt;&gt;&gt; classmates.pop()
+&apos;Adam&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;]
+</code></pre><p>4、删除指定位置的元素</p>
+<pre><code>&gt;&gt;&gt; classmates[1] = &apos;Sarah&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;,&apos;Sarah&apos;,&apos;Tracy&apos;]
+</code></pre><p>5、list中的元素可以是不同的数据类型<br>  list可以嵌套使用 相当于二维数组，三维…<br>  list可以是空list</p>
+<pre><code>&gt;&gt;&gt; L = []
+&gt;&gt;&gt; len(L)
+0
+</code></pre><h3 id="tuple-元组-有序-初始化后不可修改"><a href="#tuple-元组-有序-初始化后不可修改" class="headerlink" title="tuple (元组 有序 初始化后不可修改)"></a>tuple (元组 有序 初始化后不可修改)</h3><pre><code>&gt;&gt;&gt; classmates = (&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;)
+</code></pre><p>   这时classmates就不可以更改了，只能获取元素，比如说使用classmates[0],但是不能赋值成其他元素</p>
+<p>   1、在定义tuple的时候，其中的元素就必须被确定下来</p>
+<p>   2、如果要定义一个空的tuple，可以</p>
+<pre><code>&gt;&gt;&gt; t = ()
+&gt;&gt;&gt; t
+()
+</code></pre><p>   3、如果要定义只有一个元素的tuple，需要给一个元素的tuple在定义时加一个逗号，来消除歧义</p>
+<pre><code>&gt;&gt;&gt; t=(1,)
+&gt;&gt;&gt; t
+&gt;&gt;&gt; (1,)
+</code></pre><p>不加逗号的()按照表示数学公式中的小括号来进行计算</p>
+<p>   4、可变的 tuple</p>
+<pre><code>&gt;&gt;&gt; t = (&apos;a&apos;,&apos;b&apos;,[&apos;A&apos;,&apos;B&apos;])
+&gt;&gt;&gt; t[2][0] = &apos;X&apos;
+&gt;&gt;&gt; t[2][1] = &apos;Y&apos;
+&gt;&gt;&gt; t
+&gt;&gt;&gt; (&apos;a&apos;,&apos;b&apos;,[&apos;X&apos;,&apos;Y&apos;])
+</code></pre><p>   其实是用一个tuple里包含一个list元素，然后list元素可以改变</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/13/list-tuple/" data-id="cj2x95o9b000rvwv2y0qhrh6g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-char-ord" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/13/char-ord/" class="article-date">
+  <time datetime="2017-05-13T06:45:01.000Z" itemprop="datePublished">2017-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/techn/">techn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/13/char-ord/">字符与编码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符与编码"><a href="#字符与编码" class="headerlink" title="字符与编码"></a>字符与编码</h2><h3 id="计算机中的编码"><a href="#计算机中的编码" class="headerlink" title="计算机中的编码"></a>计算机中的编码</h3><p>   原本各国有各国不同的编码标准，标准不同就会产生冲突，在多语言混合的文本中显示出来就会有乱码。所以产生了Unicode。</p>
+<p>   Unicode是把所有语言统一到一套编码里，但所有内容全部用Unicode编码的话，会有很多的空间浪费。所以产生了可变长编码的UTF-8编码。</p>
+<p>   UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常为3个字节，生僻的字符才会被编码成4-6个字节。</p>
+<h3 id="计算机系统通用的字符编码工作方式"><a href="#计算机系统通用的字符编码工作方式" class="headerlink" title="计算机系统通用的字符编码工作方式"></a>计算机系统通用的字符编码工作方式</h3><p>   在计算机内存中使用Unicode编码，当需要保存到硬盘或者需要传输时，就转换为UTF-8编码</p>
+<p>   在显示时，文件会以Unicode的形式显示（使用记事本编辑时）</p>
+<p>   在存储时，文件会以UTF-8的形式存储于硬盘</p>
+<p>   在浏览网页时，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器</p>
+<h3 id="python的字符串"><a href="#python的字符串" class="headerlink" title="python的字符串"></a>python的字符串</h3><p>  对于单个字符的编码，有ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符</p>
+<pre><code>&gt;&gt;&gt; ord(&apos;A&apos;)
+65
+&gt;&gt;&gt; ord(&apos;中&apos;)
+20013
+&gt;&gt;&gt;chr(66)
+&apos;B&apos;
+&gt;&gt;&gt;chr(255991)
+&apos;文&apos;
+</code></pre><p>  python 的字符串类型是str，如果在网络上传输或者保存到磁盘上，就需要把str变为以字节为单位的bytes(bytes中每个字符都只占用一个字节)<br>  python 对bytes类型的数据用带b前缀的单引号或双引号表示</p>
+<pre><code>x = b&apos;ABC&apos;
+</code></pre><p>   以Unicode表示的str通过encode()方法可以编码为指定的bytes， 例如</p>
+<pre><code>&gt;&gt;&gt; &apos;ABC&apos;.encode(&apos;ascii&apos;)
+b&apos;ABC&apos;
+&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;utf-8&apos;)
+b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
+&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;ascii&apos;)
+Traceback (most recent call last):
+File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1: ordinal not in range(128)
+</code></pre><p>   如果要把bytes变为str，就需要用decode()方法：</p>
+<pre><code>&gt;&gt;&gt; b&apos;ABC&apos;.decode(&apos;ascii&apos;)
+&gt;&gt;&gt; ABC&apos;
+</code></pre><p>   len()函数计算的是str的字符数，若换成bytes，len()函数就计算字节数：</p>
+<pre><code>&gt;&gt;&gt; len(b&apos;ABC&apos;)
+&gt;&gt;&gt; 3
+&gt;&gt;&gt; len(&apos;中文&apos;.encode(&apos;utf-8&apos;))
+&gt;&gt;&gt; 6
+</code></pre><p>   当源代码中包含中文时，让保存源代码时，应务必指定保存为utf-8编码读取，我们通常在文件开头写上这两行：</p>
+<pre><code>#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+第一行注释是为了告诉linux/OS X系统，这是一个python可执行程序，Windows会忽略这个注释；
+第二行注释是为了告诉python解释器，按照utf-8读取源代码，否则，源代码中的中文输出可能有乱码
+</code></pre><h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>输出格式化的字符串。</p>
+<pre><code>“亲爱的XXX你好！你XX月的话费是XX，余额是XX”
+</code></pre><p>   xxx是根据变量变化的，所以，需要一种简便的格式化字符串的方式<br>   python中与c语言一致，用%实现</p>
+<pre><code>&gt;&gt;&gt; &apos;Hello,%s&apos; %&apos;world&apos;
+&apos;Hello,world&apos;
+&gt;&gt;&gt; &apos;Hi,%s,you have $%d.&apos; % (&apos;Michael&apos;,1000000)
+&apos;Hi,Michael,you have $1000000.&apos;
+</code></pre><p>   常见的占位符有：</p>
+<table>
+<thead>
+<tr>
+<th>占位符</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td>整数</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>十六进制整数</td>
+</tr>
+</tbody>
+</table>
+<p>   在不确定用什么的情况下，<strong>%s</strong>永远起作用。<br>   可以把任何数据类型转换为字符串。</p>
+<pre><code>&gt;&gt;&gt; &apos;Age: %s. Gender: %s&apos; % (25,True)
+&apos;Age: 25. Gender: True&apos;
+</code></pre><p>   其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数</p>
+<pre><code>&gt;&gt;&gt; &apos;%2d-%02d&apos; % (3,4)
+&apos; 3-04&apos;
+2代表位数为两位，添了0代表前面补0.
+
+&gt;&gt;&gt; &apos;%03d - %003d&apos; % (3,4)
+&apos;003 - 004&apos;
+</code></pre><p>   如果原本字符串里就有%，则需要转义，用%%表示一个%：</p>
+<pre><code>&gt;&gt;&gt; &apos;growth rate: %d %%&apos;%7
+&apos;growth rate: 7 %&apos;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/13/char-ord/" data-id="cj2x95o730001vwv2ytyt1y98" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/techn/">techn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/翔工作室/">翔工作室</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/dos/">dos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/share/">share</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/会议记录/">会议记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存疑/">存疑</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/dos/" style="font-size: 10px;">dos</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/share/" style="font-size: 10px;">share</a> <a href="/tags/会议记录/" style="font-size: 10px;">会议记录</a> <a href="/tags/存疑/" style="font-size: 10px;">存疑</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/20/hexo-error/">HEXO相关错误</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/20/dict-set/">dict与数据设置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/20/zhibanjilu/">值班记录</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/20/cmdwords/">cmd命令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Severusy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
