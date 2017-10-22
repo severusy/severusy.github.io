@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | SEVERUSY</title>
+  <title>SEVERUSY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="气吞万里如虎">
-<meta property="og:type" content="website">
+  <meta name="description" content="第一章点记法调用方法append()–列表末尾添加pop()–列表末尾删除extend()–列表末尾添加数据项集合remove()–删除特定项insert(0,’able’)–特定位置前添加项len()–长度 for 目标标识符 in 列表：    列表处理(!for 只打印外列表的各数据项) isinstance()–判断当前处理的特定标识符是否本身为某特定类型数据dir(bulitins)–B">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SEVERUSY">
-<meta property="og:url" content="http://yoursite.com/archives/2017/page/2/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/07/26/headfirst/index.html">
 <meta property="og:site_name" content="SEVERUSY">
-<meta property="og:description" content="气吞万里如虎">
+<meta property="og:description" content="第一章点记法调用方法append()–列表末尾添加pop()–列表末尾删除extend()–列表末尾添加数据项集合remove()–删除特定项insert(0,’able’)–特定位置前添加项len()–长度 for 目标标识符 in 列表：    列表处理(!for 只打印外列表的各数据项) isinstance()–判断当前处理的特定标识符是否本身为某特定类型数据dir(bulitins)–B">
+<meta property="og:image" content="http://yoursite.com/2017/07/26/headfirst/hfpy_class_down.png">
+<meta property="og:updated_time" content="2017-08-15T15:21:43.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SEVERUSY">
-<meta name="twitter:description" content="气吞万里如虎">
+<meta name="twitter:description" content="第一章点记法调用方法append()–列表末尾添加pop()–列表末尾删除extend()–列表末尾添加数据项集合remove()–删除特定项insert(0,’able’)–特定位置前添加项len()–长度 for 目标标识符 in 列表：    列表处理(!for 只打印外列表的各数据项) isinstance()–判断当前处理的特定标识符是否本身为某特定类型数据dir(bulitins)–B">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/26/headfirst/hfpy_class_down.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -140,368 +143,187 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-headfirst" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p>点记法调用方法<br>append()–列表末尾添加<br>pop()–列表末尾删除<br>extend()–列表末尾添加数据项集合<br>remove()–删除特定项<br>insert(0,’able’)–特定位置前添加项<br>len()–长度</p>
+<p>for 目标标识符 in 列表：<br>    列表处理<br>(!for 只打印外列表的各数据项)</p>
+<p>isinstance()–判断当前处理的特定标识符是否本身为某特定类型数据<br>dir(<em>bulitins</em>)–BIF列表</p>
+<p>if 必有一个else与之对应</p>
+<p>def 函数名(参数):<br>    内容<br>列表用中括号包围</p>
+<h3 id="第二章-模块"><a href="#第二章-模块" class="headerlink" title="第二章 模块"></a>第二章 模块</h3><p>####自建模块(windows)<br>1、将模块文件nester.py放到模块文件夹nester中<br>2、模块文件夹中创建setup.py,包含有关发布的元数据</p>
+<pre><code>from distutils.core import setup
+setup(
+    name = &apos;nester&apos;,
+    version = &apos;1.0.0&apos;,
+    py_modules = [&apos;nester&apos;],
+    author = &apos;hfpython&apos;,--可以不同
+    author_email = &apos;hfpython@headfirstlabs.com&apos;,--
+    url = &apos;http://www.headfirstlabs.com&apos;--
+    description = &apos;A simple printer of nested lists&apos;,--
+    )
+</code></pre><p>3、构建发布文件：<br>    在模块文件夹nester中打开终端窗口，键入命令</p>
+<pre><code>E:\coding\python3.6.2\python.exe(Python安装路径) setup.py sdist 
+</code></pre><p>4、将发布安装到python本地副本中</p>
+<pre><code>E:\coding\python3.6.2\python.exe(安装路径) setup.py install
+</code></pre><p><strong>准备就绪</strong></p>
+<h4 id="导入使用模块"><a href="#导入使用模块" class="headerlink" title="导入使用模块"></a>导入使用模块</h4><p>导入：import 模块名<br>使用时注意命名空间：<strong>nester</strong>.python_lol()</p>
+<p>from module import function–导入模块到当前命名空间(模块中的内容可能覆盖自己定义的内容)<br>import sys; sys.path–展示已有模块路径<br>range(4)–给定范围(不包括给定数据)<br>end=’’–作为print()BIF的一个参数会：在输入中自动包含换行<br>indent 缩进</p>
+<h3 id="第三章-文件与异常"><a href="#第三章-文件与异常" class="headerlink" title="第三章 文件与异常"></a>第三章 文件与异常</h3><p>open()BIF–打开磁盘文件，一次读取一个数据行<br>import os–导入os模块<br>os.getcwd()–查询当前工作目录<br>data.readline()–从打开的文件获取一个数据行<br>data.seek(0)–返回文件起始位置<br>              python的文件也可使用tell()<br>命令行中使用for… in …:后下一行要使用tab缩进<br>data.close()–文件处理完一定关闭<br>(“:”,1)–以：来分解,可选参数控制将数据行分为几部分，设为1可分为两部分<br>    (role,line_spoken) = each_line.split(‘:’,1)<br>find(‘:’)–找出一个字符串的子串，找不到返回-1，找到返回子串在原字符串中的索引位置<br>(tuple)–不可改变值<br>ValueError–数据格式不符合期望<br>IOError–数据无法正常访问</p>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>try：<br>    保护代码<br>except：–要用一种不那么一般化的方式使用except–指定异常<br>    替代代码</p>
+<p>import os<br>if os.path.exists(‘sketch.txt’):–检查文件是否存在<br>    data = open(‘sketch.txt’)<br>    .<br>    .<br>    .<br>else:<br>    print(‘The data file is missing!’)</p>
+<h5 id="特殊化异常"><a href="#特殊化异常" class="headerlink" title="特殊化异常"></a>特殊化异常</h5><p>try:<br>    …<br>except <strong>ValueError</strong>:–或者IOError<br>    pass</p>
+<h3 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h3><p>strip()–该方法从字符串中去除空白字符<br>out = open(‘data.out’,’w’)–默认r，若以写模式使用w<br>    file参数指定数据文件对象<br>print(“Norwegian Blues stun easily.”,<strong>file=out</strong>)–file参数控制将数据发送/保存到哪里<br>str()访问任何数据对象(支持串转换)的串表示<br>out.close()–刷新输出！！<br>open的参数：<br><strong>w</strong>:文件存在–清空其全部内容<br>  文件不存在–先创建这个文件，再打开文件写<br>访问模式<strong>a</strong>:追加到文件<br><strong>w+</strong>:打开一个文件完成读写（不清除）</p>
+<h4 id="try中的finally扩展"><a href="#try中的finally扩展" class="headerlink" title="try中的finally扩展"></a>try中的finally扩展</h4><p>–不论出现什么错误都必须运行finally中的代码<br>locals()–返回当前作用域中定义的所有名(变量)的一个集合<br>in –测试成员关系</p>
+<ul>
+<li><p>–联接字符串，两数相加</p>
+<h5 id="显示具体错误内容！！！"><a href="#显示具体错误内容！！！" class="headerlink" title="显示具体错误内容！！！"></a>显示具体错误内容！！！</h5><p>  try:</p>
+<pre><code>data = open(&apos;missing.txt&apos;)
+print(data.readline(),end=&apos;&apos;)
+</code></pre><p>  except IOError as err:#为异常对象给定一个名字</p>
+<pre><code>print(&apos;File error：&apos;+str(err))#err类型必须为str，可以知道具体哪里出了问题
+</code></pre><p>  finally:</p>
+<pre><code>if &apos;data&apos;in locals():
+    data.close()
+</code></pre></li>
+</ul>
+<h4 id="with技术使代码简洁"><a href="#with技术使代码简洁" class="headerlink" title="with技术使代码简洁"></a>with技术使代码简洁</h4><p>使用with可以不考虑close(),可自动关闭已打开文件，即使异常也不例外，with也使用as关键字</p>
+<h4 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h4><p>标准输出(standard output):sys.stdout<br>可从标准库的“sys”模块导入</p>
+<p>使用之前定义的模块nester</p>
+<p>print(value,sep=’’,end=’\n’,file=sys.stdout)有4个参数<br>只有缺省值不是想要的值时才需要提供值<br>调用时可以：<br>    print(‘Dead Parrot Sketch’,file=’myfavmonty.txt’)</p>
+<h4 id="持久存储"><a href="#持久存储" class="headerlink" title="持久存储"></a>持久存储</h4><p>pickle–标准库，可保存加载py数据对象(包括列表)<br>    允许容易而高效地将py数据对象保存到磁盘以及从磁盘恢复</p>
+<p>腌制–将数据对象保存到一个持久存储中的过程中<br>解除腌制–从持久态恢复到已保存的数据对象的过程<br>dump()–保存数据至硬盘<br>load()–从硬盘恢复数据</p>
+<p>处理数据要求：以二进制访问模式打开 –open使用wb/rb</p>
+<pre><code>import pickle #导入模块
+    ...
+with open(&apos;mydata.pickle&apos;,&apos;wb&apos;) as mysavedata:# 保存用dump()
+    pickle.dump([1,2,&apos;three&apos;],mysavadata)
+    ...
+with open(&apos;mydata.pickle&apos;,&apos;rb&apos;) as myrestoredata:# 恢复用load()
+    a_list = pickle.load(myrestoredata)
+print(a_list)
+</code></pre><h3 id="第五章-处理数据"><a href="#第五章-处理数据" class="headerlink" title="第五章 处理数据"></a>第五章 处理数据</h3><p>方法串链：james = data.strip().split(‘,’)–从左向右读<br>??有顺序要求吗–有啊，但是还不知道是啥样的要求<br>函数串联：对数据应用一系列函数–从右向左读<br>    嵌套</p>
+<p>####排序<br>原地排序：排序并替换，原顺序丢失<br>    对于列表：sort()方法<br>复制排序：返回有序副本，原顺序保留<br>    sorted()BIF–注意BIF和方法使用方式不一样<br>    如果传入 reverse=True可按 <strong>降序</strong>排列数据<br>    data2 = sorted(data)</p>
+<h4 id="推导列表"><a href="#推导列表" class="headerlink" title="推导列表"></a>推导列表</h4><p>#####注意顺序：<br>james1 = sorted([sanitize(j) for j in james])–将规格化的数据排序<br>james1 = [sorted(sanitize(j)) for j in james]–将每个字符规格化排好序</p>
+<p>####删除重复</p>
+<p>#####方法一<br>    julie = sorted([sanitize(j) for j in julie])<br>    unique_julie = []<br>    for each_t in julie:<br>        if each_t not in unique_julie:<br>            unique_julie.append(each_t)<br>    print(unique_julie[0:3])</p>
+<p>#####方法二：集合<br>创建空集合 set()BIF</p>
+<pre><code>distances = set()
+distances ={10.6,11,8,10.6,&quot;two&quot;,7}--重复项会被忽略
+</code></pre><p>分片</p>
+<pre><code>james2 = sorted(set(james1))[0:3]--利用sorted()生成的列表应用分片
+</code></pre><h3 id="第六章-定制数据对象"><a href="#第六章-定制数据对象" class="headerlink" title="第六章 定制数据对象"></a>第六章 定制数据对象</h3><p>pop()–调用本方法将 删除并返回列表内指定数据项<br>    x = pop(0)–调用会删除第一个数据并把它赋给指定变量x<br>定义字典：</p>
+<pre><code>cleese = {}
+cleese = dict()
+</code></pre><h4 id="打包数据和代码：类"><a href="#打包数据和代码：类" class="headerlink" title="打包数据和代码：类"></a>打包数据和代码：类</h4><p> 对于面向对象，代码称为类的方法（method）数据称为类的属性（attribute）<br> 实例化的实例化的数据对象：实例（instance）</p>
+<p> 定义类：<br>    class Athlete:<br>        def<em>init</em>(self):</p>
+<pre><code>#初始化各对象的代码
+</code></pre><p><strong>init</strong>()方法的第一个参数都是self(调用对象实例)</p>
+<p><img src="/2017/07/26/headfirst/hfpy_class_down.png" alt="class"></p>
+<p><strong>init</strong>里是强制绑定初始属性,<strong>init左右各有两个下划线</strong></p>
+<p>#####访问限制<br>内部属性：属性名称前加两个下划线__–私有变量</p>
+<p>#####继承和多态<br>class AthleteList(list):<br>    def <strong>init</strong>(self,name):<br>        list.<strong>init</strong>([])<br>        self.name=name</p>
+<h3 id="第七章-web开发"><a href="#第七章-web开发" class="headerlink" title="第七章 web开发"></a>第七章 web开发</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/18/function/" class="archive-article-date">
-  	<time datetime="2017-05-18T14:44:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/18/function/">函数</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/26/headfirst/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/14/circle/" class="archive-article-date">
-  	<time datetime="2017-05-14T11:49:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-14</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/circle/">循环</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/14/if-else/" class="archive-article-date">
-  	<time datetime="2017-05-14T10:01:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/14/if-else/">条件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/13/list-tuple/" class="archive-article-date">
-  	<time datetime="2017-05-13T12:57:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/13/list-tuple/">list和tuple数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/13/char-ord/" class="archive-article-date">
-  	<time datetime="2017-05-13T06:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/13/char-ord/">字符与编码</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/09/bookshares/" class="archive-article-date">
-  	<time datetime="2017-04-09T08:13:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/09/bookshares/">书籍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">share</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/code-src/" class="archive-article-date">
-  	<time datetime="2017-03-10T15:33:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/code-src/">路径定位问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">存疑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+    <a href="/2017/08/15/pay-attention/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          py注意(廖雪峰)
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/07/22/higher-order-function/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">高阶函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/">&laquo; Prev</a><a class="page-number" href="/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
   
 
 
@@ -525,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

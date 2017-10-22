@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/18/function/index.html">
 <meta property="og:site_name" content="SEVERUSY">
 <meta property="og:description" content="调用函数python内置函数官方文档中的函数 调用函数可以直接用python内置函数把一种数据类型变成另一种数据类型 定义函数def my_abs(x):     if x&amp;gt;=0:         return x     else:         return -x 可以直接在python命令行中定义和输出如 &amp;gt;&amp;gt;&amp;gt; def my_abs(x): ...     if">
-<meta property="og:updated_time" content="2017-05-25T13:27:59.520Z">
+<meta property="og:updated_time" content="2017-05-27T17:05:41.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数">
 <meta name="twitter:description" content="调用函数python内置函数官方文档中的函数 调用函数可以直接用python内置函数把一种数据类型变成另一种数据类型 定义函数def my_abs(x):     if x&amp;gt;=0:         return x     else:         return -x 可以直接在python命令行中定义和输出如 &amp;gt;&amp;gt;&amp;gt; def my_abs(x): ...     if">
@@ -61,6 +61,8 @@
 	        
 				<li><a href="/about">ABOUT</a></li>
 	        
+				<li><a href="/links">LINKS</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -105,6 +107,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -116,12 +120,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">HOME</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">HOME</a></li>
 		        
-					<li style="width: 50%"><a href="/about">ABOUT</a></li>
+					<li style="width: 33.333333333333336%"><a href="/about">ABOUT</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/links">LINKS</a></li>
 		        
 				</ul>
 			</nav>
@@ -316,7 +322,47 @@ f2(*args,**kw)
 
 a= 1 b= 2 c= 3 d= 88 kw= {&apos;x&apos;: &apos;#&apos;}
 </code></pre><h2 id="有点懵"><a href="#有点懵" class="headerlink" title="有点懵=="></a>有点懵==</h2><p>kw中的值赋给d了吗？(关键字参数的参数可以匹配给命名关键字)<br>然后kw就只输出剩下的那一部分？</p>
-<h5 id="对于任意函数，都可以通过类似func-args-kw-的形式调用它，无论它的参数是如何定义的。"><a href="#对于任意函数，都可以通过类似func-args-kw-的形式调用它，无论它的参数是如何定义的。" class="headerlink" title="对于任意函数，都可以通过类似func(args, *kw)的形式调用它，无论它的参数是如何定义的。"></a>对于任意函数，都可以通过类似func(<em>args, *</em>kw)的形式调用它，无论它的参数是如何定义的。</h5>
+<p><strong>对于任意函数，都可以通过类似func(*args, </strong>kw)的形式调用它，无论它的参数是如何定义的。**</p>
+<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>小心栈溢出–使用<strong>尾递归</strong>优化</p>
+<p>在函数返回时，调用自身本身，return语句不能包含表达式。</p>
+<p>这样递归本身调用多少次都只占用一个栈帧，不会出现栈溢出的情况</p>
+<pre><code>def fact(n):
+return fact_iter(n,1)
+
+def fact_iter(num,product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)
+print(fact(5))
+</code></pre><p>运算过程：</p>
+<pre><code>fact(5)
+fact_iter(5,1)
+num = 5 != 1 : return fact_iter(4,5)
+num = 4 != 1 : return fact_iter(3,5*4=20)
+num = 3 != 1 : return fact_iter(2,5*4*3=60)
+num = 2 != 1 : return fact_iter(1,5*4*3*2=120)
+num = 1 :return 120
+</code></pre><h3 id="汉诺塔的移动可以用递归函数非常简单地实现。–代码实现有点懵"><a href="#汉诺塔的移动可以用递归函数非常简单地实现。–代码实现有点懵" class="headerlink" title="汉诺塔的移动可以用递归函数非常简单地实现。–代码实现有点懵???"></a>汉诺塔的移动可以用递归函数非常简单地实现。–代码实现有点懵???</h3><p>请编写move(n, a, b, c)函数，它接收参数n，表示3个柱子A、B、C中第1个柱子A的盘子数量，然后打印出把所有盘子从A借助B移动到C的方法，例如：</p>
+<pre><code>def move(n, a, b, c):
+    if n == 1:
+        print(&apos;move&apos;,a,&apos;--&gt;&apos;,c)
+    else:
+        move(n-1,a,c,b)
+        move(1,a,b,c)
+        move(n-1,b,a,c)
+
+move(3, &apos;A&apos;, &apos;B&apos;, &apos;C&apos;) 
+
+输出:
+A --&gt; C
+A --&gt; B
+C --&gt; B
+A --&gt; C
+B --&gt; A
+B --&gt; C
+A --&gt; C
+</code></pre><p>题目已知三个柱子，（A柱子上放有大小从小到大的1,2,3号圆盘），所以一定要用到B的过渡<br>所以当n！=1时，<br>首先移动A上的1号到C上<br>2–&gt;B<br>然后把C上的1号–&gt;B上的2上<br>A上的3–&gt;C(空)上<br>B上的1–&gt;A(空)上<br>B上的2–&gt;C上的3上<br>A上的1–&gt;C中3,2上<br>完成移动<br>也就是说都要完成把</p>
+
       
 
       
@@ -513,15 +559,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">share</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,11 +571,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">dos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
               </li>
             
             <div class="clearfix"></div>
