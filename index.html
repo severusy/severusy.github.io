@@ -142,6 +142,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-hexo-多台电脑-更新-GitHub-博客-（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/21/hexo-多台电脑-更新-GitHub-博客-（上）/">hexo 多台电脑 更新 GitHub 博客 （上）</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/21/hexo-多台电脑-更新-GitHub-博客-（上）/" class="archive-article-date">
+  	<time datetime="2019-10-21T13:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><p>确保自己已经使用hexo在github搭建了个人博客</p>
+<h5 id="新建备份分支"><a href="#新建备份分支" class="headerlink" title="新建备份分支"></a>新建备份分支</h5><p>在GitHub的博客仓库（username.github.io）新建一个分支 “hexo”，切换到该分支，并在 仓库-&gt; Settings-&gt;Branches-&gt;Default branch 中，将默认分支改为hexo，Update保存。</p>
+<p>将该仓库克隆至本地，进入本地 username.github.io文件目录中。</p>
+<p>git branch 查看当前所在分支，确认为hexo</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/1c952585fce33bcd.png" alt="1571662421496"></p>
+<h5 id="将本地博客部署文件拷贝到username-github-io文件目录"><a href="#将本地博客部署文件拷贝到username-github-io文件目录" class="headerlink" title="将本地博客部署文件拷贝到username.github.io文件目录"></a>将本地博客部署文件拷贝到username.github.io文件目录</h5><p>将之前hexo项目目录下的全部文件拷贝到username.github.io文件目录中。</p>
+<p>进入username.github.io文件目录下，依次执行：</p>
+<p>git add .</p>
+<p>git commit -m ‘back up’</p>
+<p>git push</p>
+<p><strong>问题来了</strong></p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/60e9ac2c005b86af.png" alt=""></p>
+<p>每次使用git push 就会要求输入username for ‘<a href="https://github.com" target="_blank" rel="external">https://github.com</a>‘: 以及密码</p>
+<p>输入登录邮箱及密码后会显示出错，有人说使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote set-url origin git+ssh://git@github.com/username/reponame.git</div></pre></td></tr></table></figure>
+<p>使用后没有效果，也有说密码不是登录密码，是</p>
+<p>GitHub账户的Settings-&gt;Developer settings中的Personal access tokens，然而我的Personal access tokens还不存在。。</p>
+<p>后来找到了解决办法：</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/6816124b42fc3a33.png" alt=""></p>
+<p>更改了当前仓库下./git 中的config文件：</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/83cbcd291bbf3d62.png" alt=""></p>
+<p>后来使用 git push 时会有如下提示信息：</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2019/10/4ae85979f984e6ff.png" alt=""></p>
+<p>改成 git push origin hexo 就可以了</p>
+<h5 id="网页端删除GitHub分支"><a href="#网页端删除GitHub分支" class="headerlink" title="网页端删除GitHub分支"></a>网页端删除GitHub分支</h5><p><img src="https://ftp.bmp.ovh/imgs/2019/10/d718b549f487ab21.png" alt=""></p>
+<p>windows使用Edge浏览器时，有垃圾桶按钮，可以删除，</p>
+<p>Ubuntu使用Chrome浏览器时，无垃圾桶按钮。</p>
+<h5 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h5><p><a href="https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288" target="_blank" rel="external">https://blog.csdn.net/Zhangxiaorui_9/article/details/79723288</a></p>
+<p><a href="https://www.jianshu.com/p/0b1fccce74e0" target="_blank" rel="external">https://www.jianshu.com/p/0b1fccce74e0</a></p>
+<p><a href="https://stackoverflow.com/questions/10909221/why-is-github-asking-for-username-password-when-following-the-instructions-on-sc" target="_blank" rel="external">https://stackoverflow.com/questions/10909221/why-is-github-asking-for-username-password-when-following-the-instructions-on-sc</a></p>
+<p>网页端删除分支： <a href="https://blog.csdn.net/yanhanhui1/article/details/82819665" target="_blank" rel="external">https://blog.csdn.net/yanhanhui1/article/details/82819665</a></p>
+<p><a href="https://imgurl.org/" target="_blank" rel="external">本次使用的图床</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/techn/" class="article-tag-list-link color1">techn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/21/hexo-多台电脑-更新-GitHub-博客-（上）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-JD-mianjing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -888,14 +989,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">dos</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">product</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
@@ -904,7 +997,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
+                <a href="javascript:void(0)" class="js-tag color3">product</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">dos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -912,7 +1013,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
               </li>
             
             <div class="clearfix"></div>
