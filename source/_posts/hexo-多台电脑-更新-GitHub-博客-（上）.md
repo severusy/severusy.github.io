@@ -71,7 +71,32 @@ windows使用Edge浏览器时，有垃圾桶按钮，可以删除，
 
 Ubuntu使用Chrome浏览器时，无垃圾桶按钮。
 
+##### GitHub中分支设置
 
+- GitHub仓库中创建两个分支，master hexo
+
+  - master分支由hexo管理
+    - master中保存着hexo生成的所有静态页面信息 (.deploy_git)
+  - hexo分支由博主管理
+    - hexo分支保存着所有hexo配置文件，当你在其他机器上的时候，只需要机器安装hexo相关程序，将hexo分支clone下来，即可随时发布文章
+
+  
+
+##### 准备工作
+
+git clone hexo分支
+
+npm install（安装package.json中的hexo相关模块）
+
+git pull origin hexo(本地仓库的更新)不是第一次更新本地仓库则直接 git pull即可。
+
+##### 发布步骤
+
+1. hexo new ‘blog-title’
+2. 写博客
+3. hexo g 、hexo s
+4. hexo d（将本地文件push到master分支上）
+5. git add .   、git commit -m "comment" 、git push
 
 ##### 参考链接
 
@@ -84,4 +109,8 @@ https://stackoverflow.com/questions/10909221/why-is-github-asking-for-username-p
 网页端删除分支： https://blog.csdn.net/yanhanhui1/article/details/82819665
 
 [本次使用的图床](https://imgurl.org/)
+
+https://blog.csdn.net/nightmare_dimple/article/details/86661514
+
+https://blog.csdn.net/u014568993/article/details/84308188
 
