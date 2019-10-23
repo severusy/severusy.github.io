@@ -57,7 +57,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
         return nx, ny
     x, y = move(100,100,60,math.pi/6)
     print(x,y)
-
+    
     151.96152422706632 70.0
 
    其实在这里的返回值是一个不可变值的tuple，
@@ -71,7 +71,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
 ### 函数的参数类型和例子
 
 #### 位置参数
- 
+
  传入的值按位置顺序依次赋给参数
 
  例:
@@ -83,7 +83,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
         s = s * x
     return s
     print(power(5,0))
-
+    
     1
 
 #### 默认参数（缺省值）
@@ -115,7 +115,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
     L.append('END')
     return L
     print(add_end())
-
+    
     ['END']
 
 #### 可变参数
@@ -134,7 +134,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
 
     num = [1,2,3]
     print(calc(*num))
-
+    
     14
 
  **利用*num来把num这个list中的所有元素传入函数，很有用！**
@@ -183,7 +183,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
 例如只接受city和job作为关键字参数
 
 定义函数：
-  
+
     def person(name,age,*,city,job):
         print(name,age,city,job)
 
@@ -209,7 +209,7 @@ pass 可做占位符，如果没想好要怎么写函数，就可以先用一个
 **命名关键字参数必须传入参数名，如果没有传入，调用将报错**
 
     person('Jack', 24, 'Beijing', 'Engineer') 
-
+    
     Traceback (most recent call last):
     File "D:\code\py\function.py", line 106, in <module>
     person('Jack',24,'Beijing','Engineer')
@@ -252,14 +252,14 @@ python中定义函数时：参数类型的定义顺序必须是：
     args = (1,2,3,4)
     kw = {'d':99,'x':'#'}
     f1(*args,**kw)
-
+    
     a= 1 b= 2 c= 3 args= (4,) kw= {'d': 99, 'x': '#'}
     #为什么args返回(4,)?
-
+    
     args = (1,2,3)
     kw = {'d':88,'x':'#'}
     f2(*args,**kw)
-
+    
     a= 1 b= 2 c= 3 d= 88 kw= {'x': '#'}
 ## 有点懵==
 
@@ -278,7 +278,7 @@ kw中的值赋给d了吗？(关键字参数的参数可以匹配给命名关键�
 
     def fact(n):
     return fact_iter(n,1)
-
+    
     def fact_iter(num,product):
         if num == 1:
             return product
@@ -295,7 +295,7 @@ kw中的值赋给d了吗？(关键字参数的参数可以匹配给命名关键�
     num = 2 != 1 : return fact_iter(1,5*4*3*2=120)
     num = 1 :return 120
 
-### 汉诺塔的移动可以用递归函数非常简单地实现。--代码实现有点懵???
+### 汉诺塔的移动可以用递归函数非常简单地实现。
 
 请编写move(n, a, b, c)函数，它接收参数n，表示3个柱子A、B、C中第1个柱子A的盘子数量，然后打印出把所有盘子从A借助B移动到C的方法，例如：
 
@@ -306,9 +306,9 @@ kw中的值赋给d了吗？(关键字参数的参数可以匹配给命名关键�
             move(n-1,a,c,b)
             move(1,a,b,c)
             move(n-1,b,a,c)
-
+    
     move(3, 'A', 'B', 'C') 
-
+    
     输出:
     A --> C
     A --> B
@@ -328,4 +328,3 @@ B上的1-->A(空)上
 B上的2-->C上的3上
 A上的1-->C中3,2上
 完成移动
-也就是说都要完成把

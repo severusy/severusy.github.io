@@ -32,25 +32,25 @@ L = ['Michael','Sarah','Tracy','Bob','Jack']
 举例：list
 
       L = list(range(100))
-
+    
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99
-
+    
     前10个数：L[:10]
     [0，1，2，3，4，5，6，7，8，9]
-
+    
     后10个数：L[-10:]
-
+    
     前11-20个数:L[10：20]
     [10，11，12，13，14，15，16，17，18，19]
-
+    
     前10个数,每两个取一个：
     L[:10：2]
     [0，2，4，6，8]
-
+    
     所有数，每五个取一个：
     L[::5]
     [0，5，10，15，20，25，30，35，40，45，50，55，60，65，70，75，80，85，90，95]
-
+    
     L[:]
     原样复制一个list
 
@@ -71,7 +71,7 @@ tuple的切片也是tuple
     d = {'a':1,'b':2,'c':3}
     for key in d:
         print(key)
-
+    
         a
         b
         c
@@ -85,10 +85,10 @@ tuple的切片也是tuple
      for k,v in d.items()
 
 2、字符串的迭代
- 
+
     for ch in 'ABC':
         print(ch)
-
+    
         A
         B
         C
@@ -102,7 +102,7 @@ for迭代时，只要作用于可迭代对象就可以正常运行
     print(isinstance([1,2,3],Iterable))#list是否可迭代
     print(isinstance((1,2,3),Iterable)) #tuple是否可迭代
     print(isinstance(123,Iterable)) #整数是否可迭代
-
+    
     True
     True
     True
@@ -114,14 +114,14 @@ for迭代时，只要作用于可迭代对象就可以正常运行
 
     for i,value in enumerate(['A','B','C']):
     print(i,value)
-
+    
     0 A
     1 B
     2 C
-
+    
     for x,y in [(1,1),(2,4),(3,9)]:
     print(x,y)
-
+    
     1 1
     2 4
     3 9
@@ -131,7 +131,7 @@ for迭代时，只要作用于可迭代对象就可以正常运行
 求x*x的值，x = [1,2,3,4,5,6,7,8,9,10]
 
     [x*x for x in range(1,11)]
-
+    
     生成元素放到前面，后面跟for循环-->创建list
 
 for 后面加上if筛选偶数的平方：
@@ -150,14 +150,14 @@ for 后面加上if筛选偶数的平方：
 
     d = {'x':'A','y':'B','z':'C'}
     [k + '=' + v for k,v in d.items()]
-
+    
     ['x=A', 'y=B', 'z=C']
 
 把一个list中的所有字符变成小写：
 
     L = ['Hello','World','IBM','Apple']
     print([s.lower() for s in L])
-
+    
     ['hello', 'world', 'ibm', 'apple']
 
 混合数据类型大写变小写：
@@ -174,12 +174,12 @@ for 后面加上if筛选偶数的平方：
 ## 生成器（一边循环一边计算）
 
 创建生成器的方法：
- 
+
 1、把列表生成式的[]改成()
 
     g = (x*x for x in range(10))
     g
-
+    
     <generator object <genexpr> at 0x02543F30>
 
 打印generator的每个元素：
@@ -201,7 +201,7 @@ for 后面加上if筛选偶数的平方：
     g = (x*x for x in range(10))
     for n in g:
         print(n)
-
+    
     0
     1
     4
@@ -223,7 +223,7 @@ isinstance()判断对象是否为Iterable()
     isinstance([],Iterable)
     isinstance({},Iterable)
     isinstance('abc',Iterable)
-
+    
     True
     True
     True

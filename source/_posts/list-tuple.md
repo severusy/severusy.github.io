@@ -24,7 +24,7 @@ categories: techn
     ['Michael','Jack','Bob','Tracy','Adam']
 
 3、删除list末尾的元素
-  
+
     >>> classmates.pop()
     'Adam'
     >>> classmates
@@ -76,7 +76,3 @@ categories: techn
     >>> ('a','b',['X','Y'])
 
    其实是用一个tuple里包含一个list元素，然后list元素可以改变
-
-
-
-
