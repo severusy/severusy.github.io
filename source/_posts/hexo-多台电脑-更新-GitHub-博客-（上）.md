@@ -7,7 +7,7 @@ categories: techn
 
 ##### 准备工作
 
-确保自己已经使用hexo在github搭建了个人博客
+确保自己已经使用hexo在github搭建了个人博客<!-- more -->
 
 ##### 新建备份分支
 
