@@ -1029,90 +1029,7 @@ IndentationError: unexpected indent
         <h2 id="字符与编码"><a href="#字符与编码" class="headerlink" title="字符与编码"></a>字符与编码</h2><h3 id="计算机中的编码"><a href="#计算机中的编码" class="headerlink" title="计算机中的编码"></a>计算机中的编码</h3><p>   原本各国有各国不同的编码标准，标准不同就会产生冲突，在多语言混合的文本中显示出来就会有乱码。所以产生了Unicode。</p>
 <p>   Unicode是把所有语言统一到一套编码里，但所有内容全部用Unicode编码的话，会有很多的空间浪费。所以产生了可变长编码的UTF-8编码。</p>
 <p>   UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常为3个字节，生僻的字符才会被编码成4-6个字节。</p>
-<h3 id="计算机系统通用的字符编码工作方式"><a href="#计算机系统通用的字符编码工作方式" class="headerlink" title="计算机系统通用的字符编码工作方式"></a>计算机系统通用的字符编码工作方式</h3><p>   在计算机内存中使用Unicode编码，当需要保存到硬盘或者需要传输时，就转换为UTF-8编码</p>
-<p>   在显示时，文件会以Unicode的形式显示（使用记事本编辑时）</p>
-<p>   在存储时，文件会以UTF-8的形式存储于硬盘</p>
-<p>   在浏览网页时，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器</p>
-<h3 id="python的字符串"><a href="#python的字符串" class="headerlink" title="python的字符串"></a>python的字符串</h3><p>  对于单个字符的编码，有ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符</p>
-<pre><code>&gt;&gt;&gt; ord(&apos;A&apos;)
-65
-&gt;&gt;&gt; ord(&apos;中&apos;)
-20013
-&gt;&gt;&gt;chr(66)
-&apos;B&apos;
-&gt;&gt;&gt;chr(255991)
-&apos;文&apos;
-</code></pre><p>  python 的字符串类型是str，如果在网络上传输或者保存到磁盘上，就需要把str变为以字节为单位的bytes(bytes中每个字符都只占用一个字节)<br>  python 对bytes类型的数据用带b前缀的单引号或双引号表示</p>
-<pre><code>x = b&apos;ABC&apos;
-</code></pre><p>   以Unicode表示的str通过encode()方法可以编码为指定的bytes， 例如</p>
-<pre><code>&gt;&gt;&gt; &apos;ABC&apos;.encode(&apos;ascii&apos;)
-b&apos;ABC&apos;
-&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;utf-8&apos;)
-b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
-&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;ascii&apos;)
-Traceback (most recent call last):
-File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-1: ordinal not in range(128)
-</code></pre><p>   如果要把bytes变为str，就需要用decode()方法：</p>
-<pre><code>&gt;&gt;&gt; b&apos;ABC&apos;.decode(&apos;ascii&apos;)
-&gt;&gt;&gt; ABC&apos;
-</code></pre><p>   len()函数计算的是str的字符数，若换成bytes，len()函数就计算字节数：</p>
-<pre><code>&gt;&gt;&gt; len(b&apos;ABC&apos;)
-&gt;&gt;&gt; 3
-&gt;&gt;&gt; len(&apos;中文&apos;.encode(&apos;utf-8&apos;))
-&gt;&gt;&gt; 6
-</code></pre><p>   当源代码中包含中文时，让保存源代码时，应务必指定保存为utf-8编码读取，我们通常在文件开头写上这两行：</p>
-<pre><code>#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-第一行注释是为了告诉linux/OS X系统，这是一个python可执行程序，Windows会忽略这个注释；
-第二行注释是为了告诉python解释器，按照utf-8读取源代码，否则，源代码中的中文输出可能有乱码
-</code></pre><h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>输出格式化的字符串。</p>
-<pre><code>“亲爱的XXX你好！你XX月的话费是XX，余额是XX”
-</code></pre><p>   xxx是根据变量变化的，所以，需要一种简便的格式化字符串的方式<br>   python中与c语言一致，用%实现</p>
-<pre><code>&gt;&gt;&gt; &apos;Hello,%s&apos; %&apos;world&apos;
-&apos;Hello,world&apos;
-&gt;&gt;&gt; &apos;Hi,%s,you have $%d.&apos; % (&apos;Michael&apos;,1000000)
-&apos;Hi,Michael,you have $1000000.&apos;
-</code></pre><p>   常见的占位符有：</p>
-<table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%d</td>
-<td>整数</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>浮点数</td>
-</tr>
-<tr>
-<td>%s</td>
-<td>字符串</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>十六进制整数</td>
-</tr>
-</tbody>
-</table>
-<p>   在不确定用什么的情况下，<strong>%s</strong>永远起作用。<br>   可以把任何数据类型转换为字符串。</p>
-<pre><code>&gt;&gt;&gt; &apos;Age: %s. Gender: %s&apos; % (25,True)
-&apos;Age: 25. Gender: True&apos;
-</code></pre><p>   其中，格式化整数和浮点数还可以指定是否补0和整数与小数的位数</p>
-<pre><code>&gt;&gt;&gt; &apos;%2d-%02d&apos; % (3,4)
-&apos; 3-04&apos;
-2代表位数为两位，添了0代表前面补0.
-
-&gt;&gt;&gt; &apos;%03d - %003d&apos; % (3,4)
-&apos;003 - 004&apos;
-</code></pre><p>   如果原本字符串里就有%，则需要转义，用%%表示一个%：<br>     &gt;&gt;&gt; ‘growth rate: %d %%’%7<br>     ‘growth rate: 7 %’</p>
-
+        
       
 
       
@@ -1416,11 +1333,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">product</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">product</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1428,15 +1345,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">存疑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">dos</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python入门</a>
+                <a href="javascript:void(0)" class="js-tag color3">存疑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,11 +1357,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
+                <a href="javascript:void(0)" class="js-tag color4">python入门</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">reading</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">会议记录</a>
               </li>
             
             <div class="clearfix"></div>
