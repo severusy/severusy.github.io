@@ -6,20 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>dict与数据设置 | SEVERUSY</title>
+  <title>SEVERUSY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="dict和setpython内置了字典 根据同学的名字查找成绩-利用list names = [&amp;apos;Michael&amp;apos;,&amp;apos;Bob&amp;apos;,&amp;apos;Tracy&amp;apos;] scores = [95,75,85] -利用dict &amp;gt;&amp;gt;&amp;gt; d = {&amp;apos;Michael&amp;apos;:95,&amp;apos;Bob&amp;apos;:75,&amp;apos;Tra">
-<meta name="keywords" content="python">
-<meta property="og:type" content="article">
-<meta property="og:title" content="dict与数据设置">
-<meta property="og:url" content="http://yoursite.com/2017/05/20/dict-set/index.html">
+  <meta name="description" content="气吞万里如虎">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SEVERUSY">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="SEVERUSY">
-<meta property="og:description" content="dict和setpython内置了字典 根据同学的名字查找成绩-利用list names = [&amp;apos;Michael&amp;apos;,&amp;apos;Bob&amp;apos;,&amp;apos;Tracy&amp;apos;] scores = [95,75,85] -利用dict &amp;gt;&amp;gt;&amp;gt; d = {&amp;apos;Michael&amp;apos;:95,&amp;apos;Bob&amp;apos;:75,&amp;apos;Tra">
+<meta property="og:description" content="气吞万里如虎">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-27T07:07:46.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dict与数据设置">
-<meta name="twitter:description" content="dict和setpython内置了字典 根据同学的名字查找成绩-利用list names = [&amp;apos;Michael&amp;apos;,&amp;apos;Bob&amp;apos;,&amp;apos;Tracy&amp;apos;] scores = [95,75,85] -利用dict &amp;gt;&amp;gt;&amp;gt; d = {&amp;apos;Michael&amp;apos;:95,&amp;apos;Bob&amp;apos;:75,&amp;apos;Tra">
+<meta name="twitter:title" content="SEVERUSY">
+<meta name="twitter:description" content="气吞万里如虎">
   
   
     <link rel="icon" href="/favicon.png">
@@ -143,55 +141,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-dict-set" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-code-src" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      dict与数据设置
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/code-src/">路径定位问题</a>
     </h1>
   
 
         
-        <a href="/2017/05/20/dict-set/" class="archive-article-date">
-  	<time datetime="2017-05-20T09:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
+        <a href="/2017/03/10/code-src/" class="archive-article-date">
+  	<time datetime="2017-03-10T15:33:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="dict和set"><a href="#dict和set" class="headerlink" title="dict和set"></a>dict和set</h3><p>python内置了字典</p>
-<p>根据同学的名字查找成绩-利用list</p>
-<pre><code>names = [&apos;Michael&apos;,&apos;Bob&apos;,&apos;Tracy&apos;]
-scores = [95,75,85]
-</code></pre><p>-利用dict</p>
-<pre><code>&gt;&gt;&gt; d = {&apos;Michael&apos;:95,&apos;Bob&apos;:75,&apos;Tracy&apos;:85}
-&gt;&gt;&gt; d[&apos;Michael&apos;]
-95
-</code></pre><p><strong>注意：利用dict时使用的是{ }而非[ ]</strong></p>
-<p>-利用dict-通过key给出数据</p>
-<pre><code>&gt;&gt;&gt; d[&apos;Adam&apos;] = 67
-&gt;&gt;&gt; d[&apos;Adam&apos;]
-67
-</code></pre><p>1个key对应1个value值，多次对1个key放入value，后面的值有效</p>
-<p>key不存在，dict会报错，为避免key不存在的错误，有两种方法：</p>
-<p>1、通过in</p>
-<pre><code>&gt;&gt;&gt; &apos;Thomas&apos; in d
-False
-</code></pre><p>2、通过dict提供的get方法</p>
-<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;)
-&gt;&gt;&gt; 
-</code></pre><p>   返回none，python的交互式命令行不显示结果</p>
-<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;,-1)
-&gt;&gt;&gt; -1
-</code></pre><p>   自己设置如果找不到Thomas的返回值为-1，如果找不到，就返回-1</p>
-<pre><code>&gt;&gt;&gt; d.get(&apos;Michael&apos;,-1)
-&gt;&gt;&gt; 95
-</code></pre><p>   找得到就返回对应的value</p>
-<h4 id="dict内部存放顺序与key的放入顺序无关"><a href="#dict内部存放顺序与key的放入顺序无关" class="headerlink" title="dict内部存放顺序与key的放入顺序无关"></a>dict内部存放顺序与key的放入顺序无关</h4>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li>现在一个被src困扰的我尤其是被相对路径困扰的我<h3 id="src"><a href="#src" class="headerlink" title="src"></a>src</h3></li>
+<li>相对路径</li>
+<li>相对路径实际就是调用当前目录下面的文件</li>
+<li>我在桌面建一个aa的文件夹，里面一个index.html，再建一个image文件夹，放一张图片为image1.jpg</li>
+<li>例：<br>绝对路径：C:\Documents and Settings\Administrator\桌面\aa\image\image1.jpg<br>相对路径：aa/Image/image1.jpg</li>
+<li>上级文件夹../</li>
+<li>上上级文件夹../../</li>
+</ul>
+<p>##好了还是没解决再试一下</p>
+<ul>
+<li>最终还是无法用本地图片来进行文章中图片的插入，所以使用了<a href="http://tuchuang.org/" target="_blank" rel="noopener">图库</a>来现将图片上传获得链接后再插入图片了。</li>
+<li>但还是很奇怪，为什么插入不了图片呢。文件路径也是对的。。存疑。</li>
+</ul>
+
       
 
       
@@ -204,7 +190,7 @@ False
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">存疑</a>
         		</li>
       		
 		</ul>
@@ -224,94 +210,26 @@ False
 
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/code-src/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/05/20/dict-set/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-  
-<nav id="article-nav">
-  
-    <a href="/2017/05/20/hexo-error/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HEXO相关错误
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/05/20/zhibanjilu/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">值班记录</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 
 
 
   
   
-  
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
 
 
@@ -334,8 +252,8 @@ False
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
